@@ -1,24 +1,33 @@
 // swift-tools-version: 6.0
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
     name: "rest-client-api",
+    platforms: [
+        .macOS(.v12), .iOS(.v14)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "rest-client-api",
-            targets: ["rest-client-api"]),
+            targets: ["rest-client-api"]
+        ),
+    ],
+    dependencies: [
+        // ✅ Your GitHub Swift Package Dependency
+        .package(url: "https://github.com/yuvraj-2503/util-swift-sdk", exact: "1.0.2"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "rest-client-api"),
+            name: "rest-client-api",
+            dependencies: [
+                // ✅ Declare dependency on the package product/module
+                .product(name: "util", package: "util-swift-sdk")
+            ]
+        ),
         .testTarget(
-            name: "rest-client-apiTests",
-            dependencies: ["rest-client-api"]
+            name: "rest_client_apiTests",
+            dependencies: ["rest-client-api",
+                           .product(name: "util", package: "util-swift-sdk")]
         ),
     ]
 )

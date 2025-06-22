@@ -1,0 +1,15 @@
+{
+  "originHash" : "a39a6a82581faf038dcf4e1a023cc25800576a0f891e4cabe0cc0cbaaac3af5f",
+  "pins" : [
+    {
+      "identity" : "util-swift-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yuvraj-2503/util-swift-sdk",
+      "state" : {
+        "revision" : "d65b12d6ac2c278d48ca7221f1826a852a985147",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}

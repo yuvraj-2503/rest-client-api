@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
@@ -14,7 +14,7 @@ let package = Package(
     ],
     dependencies: [
         // ✅ Your GitHub Swift Package Dependency
-        .package(url: "https://github.com/yuvraj-2503/util-swift-sdk", exact: "1.0.2"),
+        .package(url: "https://github.com/yuvraj-2503/util-swift-sdk", exact: "1.0.3"),
     ],
     targets: [
         .target(
